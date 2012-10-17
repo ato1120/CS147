@@ -19,14 +19,15 @@
 		<!-- This is where we'll put all our content -->
 		<?php
 		include("config.php");
-		$query = "select * from books";
+		$query = "select * from books"; //Pull all data from our table, books
 		
 		// Don’t be intimidated by the following lines. You can pretty much
 		// always copy and paste these because they’re sort of like
 		// functional bits that never change.
 		$result = mysql_query($query);
 		while ($row = mysql_fetch_assoc($result)) {
-			echo $row["title"];
+			echo "<p>".$row["title"]." by ".$row["author"]."</p>";
+			echo "<img src ='".$row["image"]."'/p>"
 		}
 		?>
 		
